@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Results</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        .column {
+          float: left;
+          width: 33.33%;
+          padding: 5px;
+        }
+
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ec-seg</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/upload">Upload File</a></li>
+      <li class="active"><a href="/result">Results</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <h3>Download coordinate results from segmentation algorithm here.</h3>
+  <a href="/download"><input type="submit" name="submit_buttom" value="Download CSV"></a>
+
+
+<div class="row">
+
+        <div class="column">
+          <h4> Prediction </h4>
+          <img src={{pred}} alt='Predicted Image' style="width:348px;height:260px" />
+        </div>
+
+        <div class="column">
+          <h4> Original </h4>
+          <img src={{imgpath}} alt='Original Image' style="width:348px;height:260px" />
+        </div>
+
+        <div class="column">
+          <h4> Grayscale </h4>
+          <img src={{bw}} alt='Grayscale Image' style="width:348px;height:260px" />
+        </div>
+
+</div>
+  <h1>{{error}}</h1>
+</div>
+
+</body>
+
+</html>
